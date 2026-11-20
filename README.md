@@ -27,7 +27,7 @@ repetirlas en cada sesión.
 
 | Skill | Versión | Para qué sirve |
 |---|---|---|
-| [`control-de-cambios`](#control-de-cambios) | 1.0.0 | Changelog, versionamiento y commits ordenados en cualquier proyecto. |
+| [`control-de-cambios`](#control-de-cambios) | 1.1.0 | Changelog, versionamiento y commits ordenados en cualquier proyecto. |
 
 ---
 
@@ -46,12 +46,13 @@ y del gestor de paquetes.
 | **Versionamiento** | [SemVer](https://semver.org/lang/es/) en el manifiesto del proyecto (`package.json`, `pyproject.toml`, `Cargo.toml`…). `feat` sube la versión menor, `fix` sube el parche y un cambio incompatible sube la mayor. `docs`, `test`, `chore` y `refactor` no suben versión. El manifiesto y el changelog siempre coinciden. |
 | **Commits con resumen** | Título en [Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/) (`feat(ámbito): qué hace`) y un cuerpo con viñetas de lo implementado, sacadas del diff real. |
 | **Solo cuenta personal** | Los commits, push y pull requests salen únicamente con la identidad configurada en git. Nunca se añade `Co-Authored-By: Claude` ni "Generated with Claude Code". Si la identidad de git no es la esperada, Claude se detiene y pregunta. |
+| **Guardar el contexto** | Al cerrar un cambio, o cuando dices "actualiza memoria", guarda en la memoria de Claude lo que no se ve en el código: estado, decisiones y su porqué, pendientes y preferencias. Actualiza las memorias existentes en vez de duplicarlas y ofrece crear un `CLAUDE.md` si el proyecto no lo tiene. |
 | **Nada sin pedirlo** | Terminar un cambio no autoriza un commit, y un commit no autoriza un push. Tampoco se hace `--force` ni se crean etiquetas sin pedirlo. |
 
 **Activación**
 
 - Automática, al terminar un cambio, al tocar un changelog o una versión, y antes de cualquier commit, push, etiqueta o pull request.
-- Con frases como "haz el commit", "sube los cambios", "versiona esto" o "actualiza el changelog".
+- Con frases como "haz el commit", "sube los cambios", "versiona esto" o "actualiza el changelog" o "actualiza memoria".
 - Manual, con el comando `/control-de-cambios`.
 
 **Ejemplo de commit generado**

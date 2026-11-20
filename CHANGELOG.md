@@ -9,6 +9,11 @@ Formato [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Cada skill 
 - README raíz reescrito: descripción completa de `control-de-cambios` (convenciones, activación y ejemplo de commit), índice, requisitos, instalación y estructura del repositorio.
 - Se agrega este control de cambios.
 
+## control-de-cambios [1.1.0] - 2026-11-19
+
+### feat
+- Nueva regla 5: guarda el contexto del proyecto (estado, decisiones, pendientes y preferencias) en la memoria de Claude al cerrar un cambio o cuando se dice "actualiza memoria".
+
 ## control-de-cambios [1.0.0] - 2026-11-12
 
 ### feat

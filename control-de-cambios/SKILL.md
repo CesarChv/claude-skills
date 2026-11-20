@@ -1,11 +1,11 @@
 ---
 name: control-de-cambios
-description: Control de cambios, versionamiento y commits para los proyectos de César. Usar siempre que se termine un cambio en un proyecto (función nueva, corrección, documentación), al actualizar o crear un CHANGELOG, al subir la versión, y SIEMPRE antes de hacer git commit, git push, etiquetas o un pull request. También cuando el usuario diga "haz el commit", "sube los cambios", "push", "versiona", "changelog", "feat" o "fix".
+description: Control de cambios, versionamiento y commits para los proyectos de César. Usar siempre que se termine un cambio en un proyecto (función nueva, corrección, documentación), al actualizar o crear un CHANGELOG, al subir la versión, y SIEMPRE antes de hacer git commit, git push, etiquetas o un pull request. También cuando el usuario diga "haz el commit", "sube los cambios", "push", "versiona", "changelog", "feat", "fix", "actualiza memoria" o "guarda el contexto". Al terminar un cambio, además, guarda el contexto del proyecto en la memoria.
 ---
 
 # Control de cambios, versiones y commits
 
-Reglas que César quiere en todos sus proyectos. Son cuatro; aplica las que correspondan al momento.
+Reglas que César quiere en todos sus proyectos. Son cinco; aplica las que correspondan al momento.
 
 ## 1. Control de cambios (`CHANGELOG.md`)
 
@@ -68,9 +68,26 @@ Versión 0.2.0
 - Push solo si lo pidió. Nunca `--force` sin que lo pida expresamente.
 - Si pide etiquetar la versión: `git tag vX.Y.Z` sobre el commit que la cierra y `git push --tags`.
 
+## 5. Guardar el contexto (memoria)
+
+Que el contexto del proyecto sobreviva entre sesiones. Se hace **automáticamente al cerrar cada cambio** y **siempre que César diga "actualiza memoria"** o "guarda el contexto". No hace falta que lo pida cada vez.
+
+- Escribe en la memoria persistente de Claude del proyecto (`~/.claude/projects/<proyecto>/memory/`), un archivo por hecho, y añade su línea en `MEMORY.md`. Antes de crear, busca si ya existe uno que cubra el tema y actualízalo en lugar de duplicar.
+- Guarda lo que **no se ve en el código ni en el git log**:
+  - Objetivo del proyecto y estado actual (qué funciona, qué está a medias).
+  - Decisiones tomadas y su porqué.
+  - Pendientes y siguientes pasos.
+  - Preferencias de César sobre cómo trabajar.
+  - Versión actual del proyecto.
+- No guardes estructura de archivos, listas de cambios (eso ya está en el `CHANGELOG.md`) ni nada que solo importe en esta conversación.
+- Si una memoria quedó desactualizada o es falsa, corrígela o bórrala.
+- Si el proyecto no tiene `CLAUDE.md`, ofrécelo una vez (estructura, cómo correrlo, convenciones); no lo crees sin que lo acepte.
+- Al terminar, di en una línea qué memoria se guardó o actualizó.
+
 ## Orden recomendado al cerrar un cambio
 
 1. Entrada en `CHANGELOG.md`.
 2. Subir versión en el manifiesto si toca.
-3. Avisar a César qué quedó y en qué versión.
-4. Solo si lo pide: commit con resumen y, si también lo pide, push.
+3. Actualizar la memoria del proyecto (sección 5).
+4. Avisar a César qué quedó, en qué versión y qué memoria se actualizó.
+5. Solo si lo pide: commit con resumen y, si también lo pide, push.

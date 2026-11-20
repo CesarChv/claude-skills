@@ -11,6 +11,7 @@ versionamiento y commits en **cualquier proyecto**.
 | 2 | Tipos de cambio | `feat`, `fix`, `docs`, `test`, `refactor`, `chore`. |
 | 3 | Versionamiento | SemVer: `feat` sube la menor, `fix` sube el parche. |
 | 4 | Commits y push | Solo cuando se piden; el commit lleva un resumen de lo implementado y sale únicamente con la cuenta personal, sin menciones a Claude. |
+| 5 | Guardar el contexto | Al cerrar un cambio, o con "actualiza memoria", guarda en la memoria de Claude el estado, decisiones y pendientes del proyecto. |
 
 Las reglas completas están en [`SKILL.md`](SKILL.md); ese es el archivo que Claude lee.
 Este README es solo para personas.
@@ -20,7 +21,7 @@ Este README es solo para personas.
 - **Automático:** Claude la carga cuando termina un cambio, toca un changelog o una versión, o cuando le pides commit/push.
 - **A mano:** escribe `/control-de-cambios` en Claude Code.
 
-Ejemplos de lo que la activa: "haz el commit", "sube los cambios", "versiona esto", "actualiza el changelog".
+Ejemplos de lo que la activa: "haz el commit", "sube los cambios", "versiona esto", "actualiza el changelog", "actualiza memoria".
 
 ## Cuenta de git esperada
 
@@ -41,4 +42,5 @@ tus proyectos de esta PC, pero no viaja con los repositorios. Para llevarla a ot
 
 ## Historial
 
+- **1.1.0** (2026-11-19): nueva regla 5 — guarda el contexto del proyecto en la memoria al cerrar un cambio o al decir "actualiza memoria".
 - **1.0.0** (2026-11-12): primera versión — changelog, tipos feat/fix, SemVer, commits con resumen y sin atribución a Claude.
