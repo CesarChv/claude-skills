@@ -9,6 +9,12 @@ Formato [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Cada skill 
 - README raíz reescrito: descripción completa de `control-de-cambios` (convenciones, activación y ejemplo de commit), índice, requisitos, instalación y estructura del repositorio.
 - Se agrega este control de cambios.
 
+## control-de-cambios [1.2.0] - 2026-11-19
+
+### feat
+- El contexto del proyecto ahora se guarda y actualiza en el `CLAUDE.md` de su carpeta (Claude lo carga solo al abrir la sesión ahí, es visible y viaja con el proyecto) en lugar de la memoria oculta de Claude, que queda para preferencias generales.
+- Al terminar indica la ruta exacta del archivo actualizado y, si el contexto estaba solo en la memoria oculta, lo pasa al `CLAUDE.md` una vez sin borrar el original.
+
 ## control-de-cambios [1.1.0] - 2026-11-19
 
 ### feat

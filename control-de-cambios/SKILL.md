@@ -1,6 +1,6 @@
 ---
 name: control-de-cambios
-description: Control de cambios, versionamiento y commits para los proyectos de César. Usar siempre que se termine un cambio en un proyecto (función nueva, corrección, documentación), al actualizar o crear un CHANGELOG, al subir la versión, y SIEMPRE antes de hacer git commit, git push, etiquetas o un pull request. También cuando el usuario diga "haz el commit", "sube los cambios", "push", "versiona", "changelog", "feat", "fix", "actualiza memoria" o "guarda el contexto". Al terminar un cambio, además, guarda el contexto del proyecto en la memoria.
+description: Control de cambios, versionamiento y commits para los proyectos de César. Usar siempre que se termine un cambio en un proyecto (función nueva, corrección, documentación), al actualizar o crear un CHANGELOG, al subir la versión, y SIEMPRE antes de hacer git commit, git push, etiquetas o un pull request. También cuando el usuario diga "haz el commit", "sube los cambios", "push", "versiona", "changelog", "feat", "fix", "actualiza memoria" o "guarda el contexto". Al terminar un cambio, además, guarda el contexto del proyecto en el CLAUDE.md de su carpeta.
 ---
 
 # Control de cambios, versiones y commits
@@ -70,9 +70,12 @@ Versión 0.2.0
 
 ## 5. Guardar el contexto (memoria)
 
-Que el contexto del proyecto sobreviva entre sesiones. Se hace **automáticamente al cerrar cada cambio** y **siempre que César diga "actualiza memoria"** o "guarda el contexto". No hace falta que lo pida cada vez.
+Que el contexto del proyecto sobreviva entre sesiones. "Memoria" y "contexto" son lo mismo para César. Se hace **automáticamente al cerrar cada cambio** y **siempre que César diga "actualiza memoria"** o "guarda el contexto". No hace falta que lo pida cada vez.
 
-- Escribe en la memoria persistente de Claude del proyecto (`~/.claude/projects/<proyecto>/memory/`), un archivo por hecho, y añade su línea en `MEMORY.md`. Antes de crear, busca si ya existe uno que cubra el tema y actualízalo en lugar de duplicar.
+**Dónde:** en el **`CLAUDE.md` de la carpeta del proyecto** (la carpeta raíz desde la que César abre Claude). Es el lugar fiable: Claude lo carga solo al abrir la sesión ahí, César lo ve y lo puede editar, y viaja con el proyecto. No lo guardes en la memoria oculta de `~/.claude/projects/...`, que solo se carga si la sesión se abre en la carpeta exacta.
+
+- Si el `CLAUDE.md` no existe, créalo; si existe, **actualízalo** en lugar de duplicar o añadir al final sin revisar. Edita las secciones afectadas y corrige lo que quedó viejo (versión, ramas, pendientes ya cumplidos).
+- Estructura sugerida: qué es el proyecto, estado actual, cómo retomar, pendientes, decisiones con su porqué, mejoras acordadas, preferencias de César. Mantenlo corto y fácil de leer.
 - Guarda lo que **no se ve en el código ni en el git log**:
   - Objetivo del proyecto y estado actual (qué funciona, qué está a medias).
   - Decisiones tomadas y su porqué.
@@ -80,14 +83,15 @@ Que el contexto del proyecto sobreviva entre sesiones. Se hace **automáticament
   - Preferencias de César sobre cómo trabajar.
   - Versión actual del proyecto.
 - No guardes estructura de archivos, listas de cambios (eso ya está en el `CHANGELOG.md`) ni nada que solo importe en esta conversación.
-- Si una memoria quedó desactualizada o es falsa, corrígela o bórrala.
-- Si el proyecto no tiene `CLAUDE.md`, ofrécelo una vez (estructura, cómo correrlo, convenciones); no lo crees sin que lo acepte.
-- Al terminar, di en una línea qué memoria se guardó o actualizó.
+- Si algo guardado quedó desactualizado o es falso, corrígelo o bórralo.
+- La memoria oculta de Claude (`~/.claude/projects/<proyecto>/memory/`) queda solo para preferencias generales de César que valen en todos sus proyectos, no para el estado de un proyecto.
+- Si encuentras que el proyecto ya tiene contexto en la memoria oculta y no en el `CLAUDE.md`, pásalo al `CLAUDE.md` una sola vez, sin borrar el original, y avisa a César para que decida si lo borra.
+- Al terminar, di en una línea qué se actualizó y la **ruta exacta** del archivo.
 
 ## Orden recomendado al cerrar un cambio
 
 1. Entrada en `CHANGELOG.md`.
 2. Subir versión en el manifiesto si toca.
-3. Actualizar la memoria del proyecto (sección 5).
-4. Avisar a César qué quedó, en qué versión y qué memoria se actualizó.
+3. Actualizar el `CLAUDE.md` del proyecto (sección 5).
+4. Avisar a César qué quedó, en qué versión y qué archivo de contexto se actualizó.
 5. Solo si lo pide: commit con resumen y, si también lo pide, push.

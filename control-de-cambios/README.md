@@ -11,7 +11,7 @@ versionamiento y commits en **cualquier proyecto**.
 | 2 | Tipos de cambio | `feat`, `fix`, `docs`, `test`, `refactor`, `chore`. |
 | 3 | Versionamiento | SemVer: `feat` sube la menor, `fix` sube el parche. |
 | 4 | Commits y push | Solo cuando se piden; el commit lleva un resumen de lo implementado y sale únicamente con la cuenta personal, sin menciones a Claude. |
-| 5 | Guardar el contexto | Al cerrar un cambio, o con "actualiza memoria", guarda en la memoria de Claude el estado, decisiones y pendientes del proyecto. |
+| 5 | Guardar el contexto | Al cerrar un cambio, o con "actualiza memoria", guarda en el `CLAUDE.md` de la carpeta del proyecto el estado, decisiones y pendientes. |
 
 Las reglas completas están en [`SKILL.md`](SKILL.md); ese es el archivo que Claude lee.
 Este README es solo para personas.
@@ -42,5 +42,6 @@ tus proyectos de esta PC, pero no viaja con los repositorios. Para llevarla a ot
 
 ## Historial
 
+- **1.2.0** (2026-11-19): el contexto del proyecto se guarda en el `CLAUDE.md` de su carpeta, no en la memoria oculta de Claude, y se informa la ruta exacta del archivo.
 - **1.1.0** (2026-11-19): nueva regla 5 — guarda el contexto del proyecto en la memoria al cerrar un cambio o al decir "actualiza memoria".
 - **1.0.0** (2026-11-12): primera versión — changelog, tipos feat/fix, SemVer, commits con resumen y sin atribución a Claude.
